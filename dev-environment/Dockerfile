@@ -29,8 +29,11 @@ EOF
 ###### install programming tools and debugger
 RUN <<EOF
 apk update
+# dev core
 apk add coreutils build-base gcc g++ cmake
-apk add pthread
+# standard dev lib
+apk add pthread libpcap-dev
+# debuggers
 apk add gdb strace tcpdump valgrind iputils net-tools
 EOF
 
@@ -80,4 +83,4 @@ LABEL \
 	author="jya0 <jyao@student.42abudhabi.ae>" \
 	maintainer="jya0 <jyao@student.42abudhabi.ae>" \
 	version="1.1" \
-	description="This Dockerfile builds a dev environment to write and test website portfolio."
+	description="This Dockerfile builds a dev environment to write and test oculus tech interview."
